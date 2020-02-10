@@ -16,3 +16,6 @@
   max-height: 100%;
   overflow: auto;
 }
+.fa {
+  float: right;
+}
