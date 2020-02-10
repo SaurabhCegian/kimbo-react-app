@@ -1,7 +1,14 @@
 import React from "react";
+// import Form from "../../common/Form";
+import Acordion from "../../common/Acordion";
+import "./Home.css";
 
 function Home(props) {
-  return <h5>Home</h5>;
+  return (
+    <div>
+      <Acordion />
+    </div>
+  );
 }
 
 export default Home;

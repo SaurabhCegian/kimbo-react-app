@@ -6,6 +6,7 @@ import Routes from "./routes";
 import store, { history } from "./store";
 import * as serviceWorker from "./serviceWorker";
 import "./polyfills";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <Provider store={store}>
