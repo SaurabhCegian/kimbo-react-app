@@ -1,0 +1,177 @@
+@import '../../assets/sass/mixins',
+'../../assets/sass/variables';
+input{
+    width: 100%;
+    font-size: $font-regular;
+    padding: 10px;
+    &:disabled{
+        background: $mid-grey;
+    }
+}
+.input-group{
+    margin: 0 0 10px 0;
+    label{
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    .border-input{        
+        border: 1px solid $half-grey;
+        @include border-radius($default-radius);
+        padding: 10px; 
+    }
+    .material-input{
+        border: none;
+        border-bottom: 1px solid $half-grey;
+    }
+    .input-validator{
+      font-size: $font-xxs;
+      float: right;
+    }
+}
+// Checkbox
+.checkbox {
+    display: block;
+    position: relative;
+    padding-left: 6%;
+    margin: 0 0 10px 0;    
+    @include user-select(none);
+    input{
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      &:checked ~ .checkmark {
+          background-color: $primary-color;
+          border: 1px solid $half-grey;
+      }
+      &:checked ~ .checkmark:after {
+        display: block;
+      }
+    }
+  }
+  .checkmark {
+    position: absolute;
+    @include border-radius($default-radius);
+    border: 1px solid $half-grey;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    background-color: $half-white;
+    &:after {
+        top: 15%;
+        left: 15%;
+        color: $white;
+        cursor: pointer;
+        font-family: $fontawesome;
+        font-weight: 900;
+        font-size: $font-xxs; 
+        content: "\f00c";
+        position: absolute;
+        display: none;
+      }    
+  }
+//Text Input with Icon
+.input-text-icon{
+    position: relative;    
+    display: flex;
+    width: 100%;
+    border: 1px solid $mid-grey;
+    margin: 0 0 10px 0;
+    .input-left{
+        width: 100%;
+        display: flex;
+    }
+    .input-icon-button{
+        width: 30px;
+        position: relative;
+        i{
+            @include absolute-center;
+        }
+    }
+}
+.input-datepicker{
+    margin: 0 0 10px 0;
+    position: relative;
+    input[type=date]{
+        padding: 10px;
+        border: 1px solid $half-grey;
+        background: $mid-grey;
+        &::-webkit-calendar-picker-indicator {
+            position: absolute;
+            width: auto;
+            height: auto;
+            color: transparent;
+            background: transparent;
+        }
+        
+    }
+    i{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(-50%, -50%);
+    }
+}   
+input[type=date]::-webkit-inner-spin-button {
+    z-index: 1;
+    margin-right: 20px;
+}
+
+//Radio Buttons
+.radio {
+  margin: 0.5rem;
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    + .radio-label {
+      &:before {
+        content: '';
+        background: $half-white;
+        @include border-radius($round-circle-radius);
+        border: 1px solid darken($half-white, 25%);
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        position: relative;
+        top: -0.2em;
+        margin-right: 10px; 
+        vertical-align: top;
+        cursor: pointer;
+        text-align: center;
+        // transition: all 250ms ease;
+      }
+    }
+    &:checked {
+      + .radio-label {
+        &:before {
+          background-color: $primary-color;
+          box-shadow: inset 0 0 0 4px $half-white;
+        }
+      }
+    }
+    &:focus {
+      + .radio-label {
+        &:before {
+          outline: none;
+          border-color: $primary-color;
+        }
+      }
+    }
+    &:disabled {
+      + .radio-label {
+        &:before {
+          border-color: darken($half-white, 25%);
+          background: darken($half-white, 25%);
+        }
+      }
+    }
+    + .radio-label {
+      &:empty {
+        &:before {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}   

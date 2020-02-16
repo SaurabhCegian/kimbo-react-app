@@ -1,23 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
-import { ConnectedRouter as Router } from "connected-react-router";
-import Routes from "./routes";
-import store, { history } from "./store";
+import { createStore } from "redux";
 import * as serviceWorker from "./serviceWorker";
-import "./polyfills";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history}>
-      <Routes />
-    </Router>
-  </Provider>,
-  document.getElementById("root")
+import HomeContainer from "./containers/HomeContainer";
+import CreateComapnyContainer from "./containers/CreateCompanyContainer";
+import "./assets/css/style.css";
+import Header from "./components/Header";
+import Reducer from "./Reducers";
+import RegisterForm from "./components/RegisterForm";
+const store = createStore(Reducer);
+const routing = (
+  <Router>
+    <div>
+      <Header />
+      <Switch>
+        <Route path="/" exact component={HomeContainer} />
+        <Route path="/create-company" component={CreateComapnyContainer} />
+        <Route path="/progress-form" component={RegisterForm} />
+      </Switch>
+    </div>
+  </Router>
 );
+ReactDOM.render(<Provider store={store}>{routing}</Provider>, document.getElementById("root"));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
