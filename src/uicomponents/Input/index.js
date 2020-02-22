@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.scss";
+
 function Input({ label, id, placeholder, type, onChange }) {
   return (
     <div class="input-group">

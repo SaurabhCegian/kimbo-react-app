@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Input from "../../uicomponents/Input";
 import Checkbox from "../../uicomponents/Checkbox";
-import SearchIcon from "../../assets/icons/search-plus-solid.svg";
+// import SearchIcon from "../../assets/icons/search-plus-solid.svg";
 import { companySourceFund } from "./constants";
 
 function Step1Form() {
@@ -16,7 +16,7 @@ function Step1Form() {
     <div className="container pt-5">
       <div className="row">
         <div className="col-md-12 text-center">
-          <img src={SearchIcon} width={"3%"} className="img-responsive" />
+
         </div>
         <div className="col-md-12 text-center pt-2">
           <h1>Let's piece this together</h1>

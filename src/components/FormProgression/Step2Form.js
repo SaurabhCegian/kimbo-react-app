@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Input from "../../uicomponents/Input";
 import Checkbox from "../../uicomponents/Checkbox";
-import SearchIcon from "../../assets/icons/search-plus-solid.svg";
+// import SearchIcon from "../../assets/icons/search-plus-solid.svg";
 import { companySourceFund } from "./constants";
 
 function Step2Form() {
@@ -17,7 +17,7 @@ function Step2Form() {
     <div className="container pt-5">
       <div className="row">
         <div className="col-md-12 text-center">
-          <img src={SearchIcon} width={"3%"} className="img-responsive" />
+
         </div>
         <div className="col-md-12 text-center pt-2">
           <h1>Company Address</h1>
@@ -35,7 +35,7 @@ function Step2Form() {
           >
             <div className="card-container p-3">
               <div className="text-center">
-                <img src={SearchIcon} width="10%" />
+
                 <p>Add Sleeks registration Address & Digital Mail room</p>
               </div>
             </div>
@@ -51,7 +51,7 @@ function Step2Form() {
           >
             <div className="card-container p-3">
               <div className="text-center">
-                <img src={SearchIcon} width="10%" />
+
                 <p>Add my own business address</p>
               </div>
             </div>

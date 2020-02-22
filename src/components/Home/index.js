@@ -1,7 +1,7 @@
 import React from "react";
-import PlusIcon from "../../assets/icons/plus-circle-solid.svg";
-import RightIcon from "../../assets/icons/chevron-right-solid.svg";
-import SearchIcon from "../../assets/icons/search-plus-solid.svg";
+// import PlusIcon from "../../assets/icons/plus-circle-solid.svg";
+// import RightIcon from "../../assets/icons/chevron-right-solid.svg";
+// import SearchIcon from "../../assets/icons/search-plus-solid.svg";
 import { Link } from "react-router-dom";
 function Home() {
   return (
@@ -19,7 +19,7 @@ function Home() {
                       <div className="col-md-3 my-auto text-center">
                         <div className="icon-center">
                           <img
-                            src={PlusIcon}
+                            // src={PlusIcon}
                             alt="plus-icon"
                             width="50%"
                             className="img-responsive"
@@ -33,7 +33,7 @@ function Home() {
                       <div className="col-md-3 my-auto text-center">
                         <div className="icon-center">
                           <img
-                            src={RightIcon}
+                            // src={RightIcon}
                             alt="plus-icon"
                             width="20%"
                             className="img-responsive"
@@ -50,7 +50,7 @@ function Home() {
                     <div className="col-md-3 my-auto text-center">
                       <div className="icon-center">
                         <img
-                          src={SearchIcon}
+                          // src={SearchIcon}
                           alt="search-icon"
                           width="50%"
                           className="img-responsive"
@@ -64,7 +64,7 @@ function Home() {
                     <div className="col-md-3 my-auto text-center">
                       <div className="icon-center">
                         <img
-                          src={RightIcon}
+                          // src={RightIcon}
                           alt="right-icon"
                           width="20%"
                           className="img-responsive"
