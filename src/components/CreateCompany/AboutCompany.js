@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import RegisterForm from "../RegisterForm";
+import { Link } from "react-router-dom";
 
 function AboutCompany({ details = {}, submitDetails }) {
   const [aboutCompany, updateAboutCompany] = useState(details);
+  const [showNext, setShowNext] = useState(false)
   function handleChange(event) {
     updateAboutCompany({
       ...aboutCompany,
@@ -11,6 +14,9 @@ function AboutCompany({ details = {}, submitDetails }) {
   function handleSubmit(event) {
     event.preventdefault();
     submitDetails(aboutCompany);
+  }
+  const clickContinueFun = () => {
+    setShowNext(true)
   }
   return (
     <section class="create-company">
@@ -97,13 +103,14 @@ function AboutCompany({ details = {}, submitDetails }) {
                   <option value="large">Large</option>
                 </select>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">
+              <Link to={"/progress-form"}><button type="submit" class="btn btn-primary btn-block" onClick={clickContinueFun}>
                 Continue
-              </button>
+              </button></Link>
             </form>
           </div>
         </div>
       </div>
+
     </section>
   );
 }

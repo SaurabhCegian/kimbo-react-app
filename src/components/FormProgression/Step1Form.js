@@ -84,7 +84,9 @@ function Step1Form() {
           {/* <Checkbox label={"hello"} isChecked={true} /> */}
         </div>
       </div>
+
     </div>
+
   );
 }
 export default Step1Form;

@@ -111,13 +111,14 @@ function Step2Form() {
             onChange={handleChange}
           />
         </div>
-        <div className="col-md-12 text-right">
-          <button type="submit" className="btn btn-primary">
-            Save
-          </button>
-        </div>
       </div>
     </div>
   );
 }
 export default Step2Form;
+
+      // <div className="col-md-12 text-right">
+      //   <button type="submit" className="btn btn-primary">
+      //     Save
+      //   </button>
+      // </div>
