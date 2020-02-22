@@ -1,6 +1,6 @@
 import React from "react";
-import logo from '../../assets/images/logo.png';
-import profile from '../../assets/images/profile.png';
+import logo from "../../assets/images/logo.png";
+import profile from "../../assets/images/profile.png";
 
 function Header() {
   return (
