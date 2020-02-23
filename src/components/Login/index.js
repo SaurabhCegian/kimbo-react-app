@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../assets/images/logo.png";
+import loginImg from "../../assets/images/login-indesign.png";
 import { Link } from "react-router-dom";
 export default function Login() {
   const [loginCredential, setLoginCredential] = useState({
@@ -51,30 +52,32 @@ export default function Login() {
   console.log(error, loginCredential);
   return (
     <div>
-      <div className="wrapper">
-        <div className="login_content">
-          <div className="login_form">
-            <div className="login_formlogo">
-              <img src={logo} alt="kimbocorp.png" />
+      <div class="login">
+        <div class="login-1">
+          <div class="login-head">
+            <div class="login-head-logo">
+              <img src={logo} alt="logo.png" />
             </div>
-            <div className="form-head">
-              <p>Welcome to Kimbocorp</p>
+            <div>
+              <img src={loginImg} alt="login.png" />
             </div>
+          </div>
+        </div>
+        <div class="login-2">
+          <div class="login-form">
+            <h2>Login</h2>
             <form>
-              <div className="label1">
+              <div class="label3">
                 <input
-                  className="text-box"
+                  class="text-box"
                   type="email"
                   value={loginCredential.email}
                   name="email"
                   onChange={onChange}
                 />
-                {error.email.length > 0 && (
-                  <span className="error">{error.email}</span>
-                )}
-                <label className="label2">Email</label>
+                <label class="label4">Email Address</label>
               </div>
-              <div className="label1">
+              <div class="label3">
                 <input
                   className="text-box"
                   type="password"
@@ -82,43 +85,47 @@ export default function Login() {
                   value={loginCredential.password}
                   onChange={onChange}
                 />
-                <label className="label2">Password</label>
-                {error.password.length > 0 && (
-                  <span className="error">{error.password}</span>
-                )}
+                <label class="label4">Password</label>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>
+                    Forgot Password? <span class="primary-color">Reset</span>
+                  </p>
+                  <p>
+                    Don’t Have an account?{" "}
+                    <span class="primary-color">
+                      <Link to="/signup">Signup</Link>
+                    </span>
+                  </p>
+                </div>
+                <div class="col-sm-6">
+                  <span class="right">
+                    <Link to="/home">
+                      <button
+                        className="primary-button"
+                        style={{
+                          opacity:
+                            (error.email.length || error.password.length) &&
+                            (!loginCredential.email.length ||
+                              !loginCredential.password.length)
+                              ? "0.6"
+                              : ""
+                        }}
+                        disabled={
+                          (error.email.length || error.password.length) &&
+                          (!loginCredential.email.length ||
+                            !loginCredential.password.length)
+                        }
+                        onClick={handleSubmit}
+                      >
+                        SIGN IN
+                      </button>
+                    </Link>
+                  </span>
+                </div>
               </div>
             </form>
-            <div>
-              <p className="pw">
-                Forgot password?
-                <a href="#">
-                  <span className="aquablue"> Reset</span>
-                </a>
-              </p>
-              <span className="float-right">
-                <Link to="/home">
-                  <button
-                    className="primary-button"
-                    style={{
-                      opacity:
-                        (error.email.length || error.password.length) &&
-                        (!loginCredential.email.length ||
-                          !loginCredential.password.length)
-                          ? "0.6"
-                          : ""
-                    }}
-                    disabled={
-                      (error.email.length || error.password.length) &&
-                      (!loginCredential.email.length ||
-                        !loginCredential.password.length)
-                    }
-                    onClick={handleSubmit}
-                  >
-                    SIGN IN
-                  </button>
-                </Link>
-              </span>
-            </div>
           </div>
         </div>
       </div>

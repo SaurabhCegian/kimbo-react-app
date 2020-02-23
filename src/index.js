@@ -9,6 +9,7 @@ import "./assets/css/style.css";
 import Header from "./components/Header";
 import Reducer from "./Reducers";
 import LoginContainer from "./containers/LoginContainer";
+import SignUpContainer from "./containers/SignUpContainer";
 import CreateCompanyContainer from "./containers/CreateCompanyContainer";
 const store = createStore(Reducer);
 const routing = (
@@ -17,6 +18,7 @@ const routing = (
       <Header />
       <Switch>
         <Route path="/" exact component={LoginContainer} />
+        <Route path="/signup" component={SignUpContainer} />
         <Route path="/home" component={HomeContainer} />
         <Route path="/new-company" component={CreateCompanyContainer} />
       </Switch>

@@ -173,8 +173,20 @@ export default function Home() {
           </div>
         </div>
         <div className="on-boarding-button">
-          <Link to="/new-company">
-            <button className="primary-button">Start Now</button>
+          <Link
+            to={
+              activeCard === "new-company"
+                ? "/new-company"
+                : "/existing-company"
+            }
+          >
+            <button
+              className="primary-button"
+              style={{ opacity: !activeCard.length ? "0.6" : "" }}
+              disabled={!activeCard.length}
+            >
+              Start Now
+            </button>
           </Link>
         </div>
       </div>
