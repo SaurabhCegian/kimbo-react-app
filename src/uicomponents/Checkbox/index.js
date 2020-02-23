@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Checkbox({ label, isChecked }) {
   return (
-    <div class="checkbox">
+    <div className="checkbox">
       {label}
       <input type="checkbox" checked={isChecked ? "checked" : ""} />
-      <span class="checkmark"></span>
+      <span className="checkmark"></span>
     </div>
   );
 }

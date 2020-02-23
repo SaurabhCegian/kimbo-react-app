@@ -4,64 +4,66 @@ import { Link } from "react-router-dom";
 
 export default function CompanyAddress() {
   return (
-    <div class="container new_workflow">
-      <div class="form-progress">
-        <div class="row bs-wizard" style={{ borderBottom: "0" }}>
-          <div class="bs-wizard-step complete">
-            <div class="text-center bs-wizard-stepnum">Company information</div>
-            <div class="progress">
-              <div class="progress-bar"></div>
+    <div className="container new_workflow">
+      <div className="form-progress">
+        <div className="row bs-wizard" style={{ borderBottom: "0" }}>
+          <div className="bs-wizard-step complete">
+            <div className="text-center bs-wizard-stepnum">
+              Company information
             </div>
-            <div class="bs-wizard-dot">
-              <i class="fas fa-check"></i>
+            <div className="progress">
+              <div className="progress-bar"></div>
             </div>
-          </div>
-
-          <div class="bs-wizard-step complete">
-            <div class="text-center bs-wizard-stepnum">Address</div>
-            <div class="progress">
-              <div class="progress-bar"></div>
-            </div>
-            <div class="bs-wizard-dot">
-              <i class="fas fa-check"></i>
+            <div className="bs-wizard-dot">
+              <i className="fas fa-check"></i>
             </div>
           </div>
 
-          <div class="bs-wizard-step disabled">
-            <div class="text-center bs-wizard-stepnum">
+          <div className="bs-wizard-step complete">
+            <div className="text-center bs-wizard-stepnum">Address</div>
+            <div className="progress">
+              <div className="progress-bar"></div>
+            </div>
+            <div className="bs-wizard-dot">
+              <i className="fas fa-check"></i>
+            </div>
+          </div>
+
+          <div className="bs-wizard-step disabled">
+            <div className="text-center bs-wizard-stepnum">
               Directors & Shareholders
             </div>
-            <div class="progress">
-              <div class="progress-bar"></div>
+            <div className="progress">
+              <div className="progress-bar"></div>
             </div>
-            <div class="bs-wizard-dot">
-              <i class="fas fa-check"></i>
-            </div>
-          </div>
-
-          <div class="bs-wizard-step disabled">
-            <div class="text-center bs-wizard-stepnum">Accounting</div>
-            <div class="progress">
-              <div class="progress-bar"></div>
-            </div>
-            <div class="bs-wizard-dot">
-              <i class="fas fa-check"></i>
+            <div className="bs-wizard-dot">
+              <i className="fas fa-check"></i>
             </div>
           </div>
 
-          <div class="bs-wizard-step disabled">
-            <div class="text-center bs-wizard-stepnum">Payment</div>
-            <div class="progress">
-              <div class="progress-bar"></div>
+          <div className="bs-wizard-step disabled">
+            <div className="text-center bs-wizard-stepnum">Accounting</div>
+            <div className="progress">
+              <div className="progress-bar"></div>
             </div>
-            <div class="bs-wizard-dot">
-              <i class="fas fa-check"></i>
+            <div className="bs-wizard-dot">
+              <i className="fas fa-check"></i>
+            </div>
+          </div>
+
+          <div className="bs-wizard-step disabled">
+            <div className="text-center bs-wizard-stepnum">Payment</div>
+            <div className="progress">
+              <div className="progress-bar"></div>
+            </div>
+            <div className="bs-wizard-dot">
+              <i className="fas fa-check"></i>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="workflow-header">
+      <div className="workflow-header">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="934pt"
@@ -151,10 +153,10 @@ export default function CompanyAddress() {
           them to your account every week, and notify you.
         </p>
       </div>
-      <div class="new-workflow-form-1">
-        <div class="row on-boarding-card">
-          <div class="col-xs-12 col-sm-12 col-md-6 on-boarding-card-1 gap-box on-boarding-card-2 active-card">
-            <div class="on-boarding-card-icon">
+      <div className="new-workflow-form-1">
+        <div className="row on-boarding-card">
+          <div className="col-xs-12 col-sm-12 col-md-6 on-boarding-card-1 gap-box on-boarding-card-2 active-card">
+            <div className="on-boarding-card-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="934pt"
@@ -239,7 +241,7 @@ export default function CompanyAddress() {
               </svg>
             </div>
 
-            <div class="">
+            <div className="">
               <p>
                 Add
                 <b>Kimbocorp's Registered address & Digital Mailroom Service</b>
@@ -247,8 +249,8 @@ export default function CompanyAddress() {
               <p>s$ 300 / year</p>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-6 on-boarding-card-1 on-boarding-card-2 gap-box">
-            <div class="on-boarding-card-icon">
+          <div className="col-xs-12 col-sm-12 col-md-6 on-boarding-card-1 on-boarding-card-2 gap-box">
+            <div className="on-boarding-card-icon">
               <svg
                 id="Layer_5"
                 enable-background="new 0 0 64 64"
@@ -276,20 +278,20 @@ export default function CompanyAddress() {
               </svg>
             </div>
 
-            <div class="">
+            <div className="">
               <p>Add my own Business</p>
             </div>
           </div>
         </div>
-        <div class="col-md-12 address-form">
+        <div className="col-md-12 address-form">
           <h3>Company Address</h3>
-          <div class="row">
-            <div class="col-md-6 address-form-col">
+          <div className="row">
+            <div className="col-md-6 address-form-col">
               <label>Address Line 1</label>
               <input type="text" value="160 Robinson Road" />
               <label>Street address, P.O. box</label>
             </div>
-            <div class="col-md-6 address-form-col">
+            <div className="col-md-6 address-form-col">
               <label>Address Line 2</label>
               <input
                 type="text"
@@ -298,22 +300,22 @@ export default function CompanyAddress() {
               <label>Unit, building, floor etc.</label>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6 address-form-col">
+          <div className="row">
+            <div className="col-md-6 address-form-col">
               <label>City</label>
               <input type="text" value="Singapore" />
             </div>
-            <div class="col-md-6 address-form-col">
+            <div className="col-md-6 address-form-col">
               <label></label>
               <input type="text" value="State/ Province" />
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-4 address-form-col">
+          <div className="row">
+            <div className="col-md-4 address-form-col">
               <label>Zip/ Postcode</label>
               <input type="text" value="068914" />
             </div>
-            <div class="col-md-8 address-form-col">
+            <div className="col-md-8 address-form-col">
               <label>Select a Country</label>
               <select>
                 <option>India</option>
@@ -324,10 +326,10 @@ export default function CompanyAddress() {
             </div>
           </div>
         </div>
-        <div class="col-md-12">
-          <span class="float-right margin-bottom">
+        <div className="col-md-12">
+          <span className="float-right margin-bottom">
             <Link to="/directors-shareholders">
-              <button class="primary-button right">Save & Next</button>
+              <button className="primary-button right">Save & Next</button>
             </Link>
           </span>
         </div>

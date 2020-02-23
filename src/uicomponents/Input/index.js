@@ -2,13 +2,13 @@ import React from "react";
 
 function Input({ label, id, placeholder, type, onChange }) {
   return (
-    <div class="input-group">
+    <div className="input-group">
       <label>{label}</label>
       <input
         type={type}
         id={id}
         onChange={onChange}
-        class="material-input"
+        className="material-input"
         placeholder={placeholder}
       />
     </div>

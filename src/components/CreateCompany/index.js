@@ -7,7 +7,7 @@ export default function CreateCompany() {
     <div>
       <div className="container new_workflow">
         <ProgressBar />
-        <div class="workflow-header">
+        <div className="workflow-header">
           <svg
             id="Layer_1_1_"
             enable-background="new 0 0 64 64"
@@ -36,35 +36,35 @@ export default function CreateCompany() {
           </svg>
           <h1>Let's Piece this together</h1>
         </div>
-        <div class="new-workflow-form-1">
-          <div class="row">
-            <div class="col-md-12">
+        <div className="new-workflow-form-1">
+          <div className="row">
+            <div className="col-md-12">
               <h3>Information about your new company</h3>
             </div>
-            <div class="col-md-12">
+            <div className="col-md-12">
               <div>
-                <div class="workflow-form">
+                <div className="workflow-form">
                   <label>Proposed Name - First Choice</label>
                   <br />
-                  <input type="text" class="line-textbox" />
-                  <input type="text" class="dotted-textbox" />
-                  <button class="primary-button">Check</button>
+                  <input type="text" className="line-textbox" />
+                  <input type="text" className="dotted-textbox" />
+                  <button className="primary-button">Check</button>
                 </div>
               </div>
             </div>
-            <div class="col-md-12">
+            <div className="col-md-12">
               <p>
                 Incorporation Tentative Date : 26 Feb 2020
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                <i className="fa fa-info-circle" aria-hidden="true"></i>
               </p>
             </div>
-            <div class="col-md-12">
+            <div className="col-md-12">
               <p>
                 Financial Year End : 31 Jan 2021
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                <i className="fa fa-info-circle" aria-hidden="true"></i>
               </p>
             </div>
-            <div class="col-md-12 about-textbox">
+            <div className="col-md-12 about-textbox">
               <label>Please describe your business</label>
               <textarea
                 aria-label="Please describe your business"
@@ -72,7 +72,7 @@ export default function CreateCompany() {
               ></textarea>
               <p>Description must have atleast 100 or more characters</p>
             </div>
-            <div class="col-md-12 workflow-form-dropdown">
+            <div className="col-md-12 workflow-form-dropdown">
               <label>SSIC - Company Activity</label>
               <select>
                 <option>[01111] Growing of leafy and fruit vegetables</option>
@@ -81,92 +81,92 @@ export default function CreateCompany() {
                 <option>[01111] Growing of leafy and fruit vegetables</option>
               </select>
             </div>
-            <div class="col-md-12 workflow-form-checkbox">
+            <div className="col-md-12 workflow-form-checkbox">
               <p>
                 Why are you interested in incorporating your business in
                 Singapore?
               </p>
-              <p class="Warning-color"> Please select atleast 1.</p>
-              <div class="checkbox-label">
-                <label class="checkbox-container">
+              <p className="Warning-color"> Please select atleast 1.</p>
+              <div className="checkbox-label">
+                <label className="checkbox-container">
                   <input type="checkbox" checked="checked" />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
                 <p>Expansion of existing business</p>
                 <br />
-                <label class="checkbox-container">
+                <label className="checkbox-container">
                   <input type="checkbox" checked="checked" />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
                 <p>Entering into Asia</p>
                 <br />
-                <label class="checkbox-container">
+                <label className="checkbox-container">
                   <input type="checkbox" checked="checked" />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
                 <p>Requested by parties we work with</p>
                 <br />
-                <label class="checkbox-container">
+                <label className="checkbox-container">
                   <input type="checkbox" checked="checked" />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
                 <p>Singapore is internationally recognized hub</p>
                 <br />
-                <label class="checkbox-container">
+                <label className="checkbox-container">
                   <input type="checkbox" checked="checked" />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
                 <p>Others please specify</p>
                 <br />
               </div>
             </div>
-            <div class="col-md-12 workflow-form-checkbox">
+            <div className="col-md-12 workflow-form-checkbox">
               <p>
                 Why are you interested in incorporating your business in
                 Singapore?
               </p>
-              <p class="Warning-color"> Please select atleast 1.</p>
-              <div class="checkbox-label">
-                <label class="checkbox-container">
+              <p className="Warning-color"> Please select atleast 1.</p>
+              <div className="checkbox-label">
+                <label className="checkbox-container">
                   <input type="checkbox" checked="checked" />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
                 <p>Expansion of existing business</p>
                 <br />
-                <label class="checkbox-container">
+                <label className="checkbox-container">
                   <input type="checkbox" checked="checked" />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
                 <p>Entering into Asia</p>
                 <br />
-                <label class="checkbox-container">
+                <label className="checkbox-container">
                   <input type="checkbox" checked="checked" />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
                 <p>Requested by parties we work with</p>
                 <br />
-                <label class="checkbox-container">
+                <label className="checkbox-container">
                   <input type="checkbox" checked="checked" />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
                 <p>Singapore is internationally recognized hub</p>
                 <br />
-                <label class="checkbox-container">
+                <label className="checkbox-container">
                   <input type="checkbox" checked="checked" />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
                 <p>Others please specify</p>
                 <br />
               </div>
             </div>
-            <div class="col-md-12">
-              <span class="float-right margin-bottom">
+            <div className="col-md-12">
+              <span className="float-right margin-bottom">
                 <Link to="/company-address">
-                  <button class="primary-button right">Save & Next</button>
+                  <button className="primary-button right">Save & Next</button>
                 </Link>
               </span>
             </div>
-            <div class="clo-md-12"></div>
+            <div className="clo-md-12"></div>
           </div>
         </div>
       </div>

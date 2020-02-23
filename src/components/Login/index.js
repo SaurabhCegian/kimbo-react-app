@@ -52,10 +52,10 @@ export default function Login() {
   console.log(error, loginCredential);
   return (
     <div>
-      <div class="login">
-        <div class="login-1">
-          <div class="login-head">
-            <div class="login-head-logo">
+      <div className="login">
+        <div className="login-1">
+          <div className="login-head">
+            <div className="login-head-logo">
               <img src={logo} alt="logo.png" />
             </div>
             <div>
@@ -63,21 +63,21 @@ export default function Login() {
             </div>
           </div>
         </div>
-        <div class="login-2">
-          <div class="login-form">
+        <div className="login-2">
+          <div className="login-form">
             <h2>Login</h2>
             <form>
-              <div class="label3">
+              <div className="label3">
                 <input
-                  class="text-box"
+                  className="text-box"
                   type="email"
                   value={loginCredential.email}
                   name="email"
                   onChange={onChange}
                 />
-                <label class="label4">Email Address</label>
+                <label className="label4">Email Address</label>
               </div>
-              <div class="label3">
+              <div className="label3">
                 <input
                   className="text-box"
                   type="password"
@@ -85,22 +85,23 @@ export default function Login() {
                   value={loginCredential.password}
                   onChange={onChange}
                 />
-                <label class="label4">Password</label>
+                <label className="label4">Password</label>
               </div>
-              <div class="row">
-                <div class="col-sm-6">
+              <div className="row">
+                <div className="col-sm-6">
                   <p>
-                    Forgot Password? <span class="primary-color">Reset</span>
+                    Forgot Password?{" "}
+                    <span className="primary-color">Reset</span>
                   </p>
                   <p>
                     Don’t Have an account?{" "}
-                    <span class="primary-color">
+                    <span className="primary-color">
                       <Link to="/signup">Signup</Link>
                     </span>
                   </p>
                 </div>
-                <div class="col-sm-6">
-                  <span class="right">
+                <div className="col-sm-6">
+                  <span className="right">
                     <Link to="/home">
                       <button
                         className="primary-button"

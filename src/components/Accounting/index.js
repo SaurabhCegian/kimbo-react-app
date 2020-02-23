@@ -731,9 +731,9 @@ export default function Accounting() {
                 </Link>
               </span>
               <span className="float-right margin-bottom margin-right">
-                <a href="new-workflow-3.html">
+                <Link to="/directors-shareholders">
                   <button className="primary-button">Back</button>
-                </a>
+                </Link>
               </span>
             </div>
           </div>
