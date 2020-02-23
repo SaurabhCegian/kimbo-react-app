@@ -1,5 +1,6 @@
 import React from "react";
 import ProgressBar from "./ProgressBar";
+import { Link } from "react-router-dom";
 
 export default function CreateCompany() {
   return (
@@ -160,9 +161,9 @@ export default function CreateCompany() {
             </div>
             <div class="col-md-12">
               <span class="float-right margin-bottom">
-                <a href="new-workflow-2.html">
+                <Link to="/company-address">
                   <button class="primary-button right">Save & Next</button>
-                </a>
+                </Link>
               </span>
             </div>
             <div class="clo-md-12"></div>

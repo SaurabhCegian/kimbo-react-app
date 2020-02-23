@@ -11,6 +11,10 @@ import Reducer from "./Reducers";
 import LoginContainer from "./containers/LoginContainer";
 import SignUpContainer from "./containers/SignUpContainer";
 import CreateCompanyContainer from "./containers/CreateCompanyContainer";
+import CompanyAddress from "./components/CompanyAddress";
+import DirectorsShareholders from "./components/DirectorsShareholders";
+import Accounting from "./components/Accounting";
+import Payment from "./components/Payment";
 const store = createStore(Reducer);
 const routing = (
   <Router>
@@ -19,6 +23,13 @@ const routing = (
       <Switch>
         <Route path="/" exact component={LoginContainer} />
         <Route path="/signup" component={SignUpContainer} />
+        <Route path="/accounting" component={Accounting} />
+        <Route path="/payment" component={Payment} />
+        <Route path="/company-address" component={CompanyAddress} />
+        <Route
+          path="/directors-shareholders"
+          component={DirectorsShareholders}
+        />
         <Route path="/home" component={HomeContainer} />
         <Route path="/new-company" component={CreateCompanyContainer} />
       </Switch>
