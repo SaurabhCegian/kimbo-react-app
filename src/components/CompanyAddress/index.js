@@ -1,8 +1,16 @@
-import React from "react";
-import ProgressBar from "../CreateCompany/ProgressBar";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import OwnAddress from "./OwnAddress";
+import ExistingAddress from "./ExistingAddress";
 
 export default function CompanyAddress() {
+  const [activeCard, setActiveCard] = useState("");
+  const onClickNewAddres = () => {
+    setActiveCard("new-address");
+  };
+  const onClickExistingAddres = () => {
+    setActiveCard("exist-address");
+  };
   return (
     <div className="container new_workflow">
       <div className="form-progress">
@@ -155,7 +163,13 @@ export default function CompanyAddress() {
       </div>
       <div className="new-workflow-form-1">
         <div className="row on-boarding-card">
-          <div className="col-xs-12 col-sm-12 col-md-6 on-boarding-card-1 gap-box on-boarding-card-2 active-card">
+          <div
+            className={
+              "col-xs-12 col-sm-12 col-md-6 on-boarding-card-1 gap-box on-boarding-card-2 " +
+              (activeCard === "exist-address" ? "active-card" : "")
+            }
+            onClick={onClickExistingAddres}
+          >
             <div className="on-boarding-card-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -243,13 +257,19 @@ export default function CompanyAddress() {
 
             <div className="">
               <p>
-                Add
+                Add{" "}
                 <b>Kimbocorp's Registered address & Digital Mailroom Service</b>
               </p>
               <p>s$ 300 / year</p>
             </div>
           </div>
-          <div className="col-xs-12 col-sm-12 col-md-6 on-boarding-card-1 on-boarding-card-2 gap-box">
+          <div
+            className={
+              "col-xs-12 col-sm-12 col-md-6 on-boarding-card-1 on-boarding-card-2 gap-box " +
+              (activeCard === "new-address" ? "active-card" : "")
+            }
+            onClick={onClickNewAddres}
+          >
             <div className="on-boarding-card-icon">
               <svg
                 id="Layer_5"
@@ -283,49 +303,8 @@ export default function CompanyAddress() {
             </div>
           </div>
         </div>
-        <div className="col-md-12 address-form">
-          <h3>Company Address</h3>
-          <div className="row">
-            <div className="col-md-6 address-form-col">
-              <label>Address Line 1</label>
-              <input type="text" value="160 Robinson Road" />
-              <label>Street address, P.O. box</label>
-            </div>
-            <div className="col-md-6 address-form-col">
-              <label>Address Line 2</label>
-              <input
-                type="text"
-                value="#14-04 Singapore Business Federation Centre"
-              />
-              <label>Unit, building, floor etc.</label>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-6 address-form-col">
-              <label>City</label>
-              <input type="text" value="Singapore" />
-            </div>
-            <div className="col-md-6 address-form-col">
-              <label></label>
-              <input type="text" value="State/ Province" />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-4 address-form-col">
-              <label>Zip/ Postcode</label>
-              <input type="text" value="068914" />
-            </div>
-            <div className="col-md-8 address-form-col">
-              <label>Select a Country</label>
-              <select>
-                <option>India</option>
-                <option>Singapore</option>
-                <option>China</option>
-                <option>Japan</option>
-              </select>
-            </div>
-          </div>
-        </div>
+        {activeCard === "new-address" && <OwnAddress />}
+        {activeCard === "exist-address" && <ExistingAddress />}
         <div className="col-md-12">
           <span className="float-right margin-bottom">
             <Link to="/directors-shareholders">

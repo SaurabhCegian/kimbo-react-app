@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import profile from "../../assets/images/profile.png";
 import { Link } from "react-router-dom";
+import Directors from "./Directors";
+import Shareholders from "./Shareholders";
 
 export default function DirectorsShareholders() {
+  const [activeCard, setActiveCard] = useState("");
+  const currentActiveCard = card => {
+    setActiveCard(card);
+  };
+
   return (
     <div>
       <div className="container new_workflow">
@@ -90,7 +97,13 @@ export default function DirectorsShareholders() {
       </div>
       <div className="manual-dis-fix">
         <div className="row on-boarding-card on-boarding-card-excp">
-          <div className="col-md-3 col-sm-12 col-xs-12 on-boarding-card-1 gap-box active-card">
+          <div
+            className={
+              "col-md-3 col-sm-12 col-xs-12 on-boarding-card-1 gap-box " +
+              (activeCard === "local-director" ? "active-card" : "")
+            }
+            onClick={() => currentActiveCard("local-director")}
+          >
             <div className="on-boarding-card-icon">
               <div className="on-boarding-card-icon-logo">
                 <img src={profile} alt="logo.png" />
@@ -102,7 +115,13 @@ export default function DirectorsShareholders() {
               <p>Eligibility Criteria</p>
             </div>
           </div>
-          <div className="col-md-3 col-sm-12 col-xs-12 on-boarding-card-1 gap-box">
+          <div
+            className={
+              "col-md-3 col-sm-12 col-xs-12 on-boarding-card-1 gap-box " +
+              (activeCard === "nominee-director-one" ? "active-card" : "")
+            }
+            onClick={() => currentActiveCard("nominee-director-one")}
+          >
             <div className="on-boarding-card-icon">
               <div className="on-boarding-card-icon-logo">
                 <img src={profile} alt="logo.png" />
@@ -128,7 +147,13 @@ export default function DirectorsShareholders() {
               </label>
             </div>
           </div>
-          <div className="col-md-3 col-sm-12 col-xs-12 on-boarding-card-1 gap-box">
+          <div
+            className={
+              "col-md-3 col-sm-12 col-xs-12 on-boarding-card-1 gap-box " +
+              (activeCard === "nominee-director-two" ? "active-card" : "")
+            }
+            onClick={() => currentActiveCard("nominee-director-two")}
+          >
             <div className="on-boarding-card-icon">
               <div className="on-boarding-card-icon-logo">
                 <img src={profile} alt="logo.png" />
@@ -154,7 +179,13 @@ export default function DirectorsShareholders() {
               </label>
             </div>
           </div>
-          <div className="col-md-3 col-sm-12 col-xs-12 on-boarding-card-1 gap-box">
+          <div
+            className={
+              "col-md-3 col-sm-12 col-xs-12 on-boarding-card-1 gap-box " +
+              (activeCard === "nominee-director-three" ? "active-card" : "")
+            }
+            onClick={() => currentActiveCard("nominee-director-three")}
+          >
             <div className="on-boarding-card-icon">
               <div className="on-boarding-card-icon-logo">
                 <img src={profile} alt="logo.png" />
@@ -199,111 +230,17 @@ export default function DirectorsShareholders() {
 
         <div className="onboarding-user-add">
           <div className="row">
-            <div className="col-md-6">
-              <h1>Shareholders</h1>
-              <div className="onboarding-user-add-card">
-                <div className="onboarding-user-add-card-head">
-                  <div>
-                    <p>
-                      <b>Add Shareholders</b>
-                    </p>
-                  </div>
+            {activeCard === "local-director" && (
+              <>
+                <div className="col-md-6">
+                  <Directors />
                 </div>
-                <div className="onboarding-user-add-card-users">
-                  <div className="user_icon">
-                    <img src={profile} alt="profile.png" />
-                  </div>
-                  <p>Kimbo Nominee Director</p>
-                  <span className="close-icon">
-                    <i className="fas fa-times"></i>
-                  </span>
+                <div className="col-md-6">
+                  <Shareholders />
                 </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <h1>Shareholders</h1>
-              <div className="onboarding-user-add-card">
-                <div className="onboarding-user-add-card-head">
-                  <div>
-                    <p>
-                      <b>Add Shareholders</b>
-                    </p>
-                  </div>
-                </div>
-                <div className="onboarding-user-add-card-users">
-                  <div className="user_icon">
-                    <img src={profile} alt="profile.png" />
-                  </div>
-                  <p>Kimbo Nominee Director</p>
-                  <span className="close-icon">
-                    <i className="fas fa-times"></i>
-                  </span>
-                </div>
-                <div className="onboarding-user-add-card-users">
-                  <div className="user_icon">
-                    <img src={profile} alt="profile.png" />
-                  </div>
-                  <p>Kimbo Nominee Director</p>
-                  <span className="close-icon">
-                    <i className="fas fa-times"></i>
-                  </span>
-                </div>
-                <div className="onboarding-user-add-card-users">
-                  <div className="user_icon">
-                    <img src={profile} alt="profile.png" />
-                  </div>
-                  <p>Kimbo Nominee Director</p>
-                  <span className="close-icon">
-                    <i className="fas fa-times"></i>
-                  </span>
-                </div>
-                <div className="onboarding-user-add-card-users">
-                  <div className="user_icon">
-                    <img src={profile} alt="profile.png" />
-                  </div>
-                  <p>Kimbo Nominee Director</p>
-                  <span className="close-icon">
-                    <i className="fas fa-times"></i>
-                  </span>
-                </div>
-                <div className="onboarding-user-add-card-users">
-                  <div className="user_icon">
-                    <img src={profile} alt="profile.png" />
-                  </div>
-                  <p>Kimbo Nominee Director</p>
-                  <span className="close-icon">
-                    <i className="fas fa-times"></i>
-                  </span>
-                </div>
-                <div className="onboarding-user-add-card-users">
-                  <div className="user_icon">
-                    <img src={profile} alt="profile.png" />
-                  </div>
-                  <p>Kimbo Nominee Director</p>
-                  <span className="close-icon">
-                    <i className="fas fa-times"></i>
-                  </span>
-                </div>
-                <div className="onboarding-user-add-card-users">
-                  <div className="user_icon">
-                    <img src={profile} alt="profile.png" />
-                  </div>
-                  <p>Kimbo Nominee Director</p>
-                  <span className="close-icon">
-                    <i className="fas fa-times"></i>
-                  </span>
-                </div>
-                <div className="onboarding-user-add-card-users">
-                  <div className="user_icon">
-                    <img src={profile} alt="profile.png" />
-                  </div>
-                  <p>Kimbo Nominee Director</p>
-                  <span className="close-icon">
-                    <i className="fas fa-times"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
+              </>
+            )}
+
             <div className="col-md-12">
               <span className="float-right">
                 <Link to="/accounting">

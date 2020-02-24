@@ -15,6 +15,7 @@ import CompanyAddress from "./components/CompanyAddress";
 import DirectorsShareholders from "./components/DirectorsShareholders";
 import Accounting from "./components/Accounting";
 import Payment from "./components/Payment";
+import ExistCompany from "./components/ExistCompany";
 const store = createStore(Reducer);
 const routing = (
   <Router>
@@ -32,6 +33,7 @@ const routing = (
         />
         <Route path="/home" component={HomeContainer} />
         <Route path="/new-company" component={CreateCompanyContainer} />
+        <Route path="/existing-company" component={ExistCompany} />
       </Switch>
     </div>
   </Router>
