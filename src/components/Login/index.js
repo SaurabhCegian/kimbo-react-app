@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import logo from "../../assets/images/logo.png";
 import loginImg from "../../assets/images/login-indesign.png";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { config } from "../../Auth";
+import { FLASK_PORT } from "../../Auth/PortConstant";
+
 export default function Login() {
   const [loginCredential, setLoginCredential] = useState({
     email: "",
@@ -47,6 +51,15 @@ export default function Login() {
       loginCredential.password.length
     ) {
       console.log(loginCredential);
+      axios
+        .post(`${FLASK_PORT}login`, loginCredential, config)
+        .then(response => {
+          if (response.data.status === 200) {
+            console.log(response);
+          } else {
+            alert(response.data.message);
+          }
+        });
     }
   };
   console.log(error, loginCredential);
@@ -110,7 +123,7 @@ export default function Login() {
                             (error.email.length || error.password.length) &&
                             (!loginCredential.email.length ||
                               !loginCredential.password.length)
-                              ? "0.6"
+                              ? "0.4"
                               : ""
                         }}
                         disabled={

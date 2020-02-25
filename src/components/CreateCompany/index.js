@@ -1,8 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
 import { Link } from "react-router-dom";
 
 export default function CreateCompany() {
+  const [proposedName, setProposedName] = useState("");
+  const [firstChoice, setFirstChoice] = useState("");
+  const [businessDetail, setBusinessDetail] = useState("");
+  const [companyActivity, setCompanyActivity] = useState("");
+
+  const businessInterestPoints = [
+    "Expansion of existing business",
+    "Entering into Asia",
+    "Requested by parties we work with",
+    "Singapore is internationally recognized hub",
+    "Others please specify"
+  ];
+  const sourceFund = [
+    "Savings From Employment",
+    "Profits generated from business",
+    "Investment gain",
+    "Loans from family and friends",
+    "Investors"
+  ];
+  const [businessPoints, setBusinessPoints] = useState([]);
+  const [sourceFunds, setSourceFunds] = useState([]);
+
+  const onChangeCompanyInformation = e => {
+    const { name, value } = e.target;
+    console.log(name, value);
+  };
+  const onCheckProposedName = e => {
+    alert("check click");
+  };
+  const onChangeCompanyActivity = e => {
+    console.log(e.target.value);
+  };
+  const onChangeBusinessPoints = point => {
+    let temp = [...businessPoints];
+    if (temp.includes(point)) {
+      const index = temp.indexOf(point);
+      if (index > -1) {
+        temp.splice(index, 1);
+      }
+    } else {
+      temp = [...temp, point];
+    }
+
+    setBusinessPoints(temp);
+  };
+  const onSelectSourceFund = point => {
+    let temp = [...sourceFunds];
+    if (temp.includes(point)) {
+      const index = temp.indexOf(point);
+      if (index > -1) {
+        temp.splice(index, 1);
+      }
+    } else {
+      temp = [...temp, point];
+    }
+    setSourceFunds(temp);
+  };
+
   return (
     <div>
       <div className="container new_workflow">
@@ -46,9 +104,26 @@ export default function CreateCompany() {
                 <div className="workflow-form">
                   <label>Proposed Name - First Choice</label>
                   <br />
-                  <input type="text" className="line-textbox" />
-                  <input type="text" className="dotted-textbox" />
-                  <button className="primary-button">Check</button>
+                  <input
+                    type="text"
+                    className="line-textbox"
+                    name="proposedName"
+                    onChange={onChangeCompanyInformation}
+                    value={proposedName}
+                  />
+                  <input
+                    type="text"
+                    className="dotted-textbox"
+                    name="firstChoice"
+                    onChange={onChangeCompanyInformation}
+                    value={firstChoice}
+                  />
+                  <button
+                    className="primary-button"
+                    onClick={onCheckProposedName}
+                  >
+                    Check
+                  </button>
                 </div>
               </div>
             </div>
@@ -69,16 +144,30 @@ export default function CreateCompany() {
               <textarea
                 aria-label="Please describe your business"
                 rows="5"
+                name="businessDetail"
+                onChange={onChangeCompanyInformation}
+                value={businessDetail}
               ></textarea>
               <p>Description must have atleast 100 or more characters</p>
             </div>
             <div className="col-md-12 workflow-form-dropdown">
               <label>SSIC - Company Activity</label>
-              <select>
-                <option>[01111] Growing of leafy and fruit vegetables</option>
-                <option>[01111] Growing of leafy and fruit vegetables</option>
-                <option>[01111] Growing of leafy and fruit vegetables</option>
-                <option>[01111] Growing of leafy and fruit vegetables</option>
+              <select
+                onChange={onChangeCompanyActivity}
+                value={companyActivity}
+              >
+                <option value="First">
+                  [01111] Growing of leafy and fruit vegetables
+                </option>
+                <option value="Second">
+                  [01111] Growing of leafy and fruit vegetables
+                </option>
+                <option value="Third">
+                  [01111] Growing of leafy and fruit vegetables
+                </option>
+                <option value="Fourth">
+                  [01111] Growing of leafy and fruit vegetables
+                </option>
               </select>
             </div>
             <div className="col-md-12 workflow-form-checkbox">
@@ -88,81 +177,71 @@ export default function CreateCompany() {
               </p>
               <p className="Warning-color"> Please select atleast 1.</p>
               <div className="checkbox-label">
-                <label className="checkbox-container">
-                  <input type="checkbox" checked="checked" />
-                  <span className="checkmark"></span>
-                </label>
-                <p>Expansion of existing business</p>
-                <br />
-                <label className="checkbox-container">
-                  <input type="checkbox" checked="checked" />
-                  <span className="checkmark"></span>
-                </label>
-                <p>Entering into Asia</p>
-                <br />
-                <label className="checkbox-container">
-                  <input type="checkbox" checked="checked" />
-                  <span className="checkmark"></span>
-                </label>
-                <p>Requested by parties we work with</p>
-                <br />
-                <label className="checkbox-container">
-                  <input type="checkbox" checked="checked" />
-                  <span className="checkmark"></span>
-                </label>
-                <p>Singapore is internationally recognized hub</p>
-                <br />
-                <label className="checkbox-container">
-                  <input type="checkbox" checked="checked" />
-                  <span className="checkmark"></span>
-                </label>
-                <p>Others please specify</p>
-                <br />
+                {businessInterestPoints.map((eachPoint, index) => {
+                  return (
+                    <>
+                      <label className="checkbox-container" key={index}>
+                        <input
+                          type="checkbox"
+                          checked={
+                            businessPoints.includes(eachPoint) ? "checked" : ""
+                          }
+                          onChange={() => onChangeBusinessPoints(eachPoint)}
+                        />
+                        <span className="checkmark"></span>
+                      </label>
+                      <p>{eachPoint}</p>
+                    </>
+                  );
+                })}
               </div>
             </div>
             <div className="col-md-12 workflow-form-checkbox">
-              <p>
-                Why are you interested in incorporating your business in
-                Singapore?
-              </p>
+              <p>Select your company's source of fund</p>
               <p className="Warning-color"> Please select atleast 1.</p>
               <div className="checkbox-label">
-                <label className="checkbox-container">
-                  <input type="checkbox" checked="checked" />
-                  <span className="checkmark"></span>
-                </label>
-                <p>Expansion of existing business</p>
-                <br />
-                <label className="checkbox-container">
-                  <input type="checkbox" checked="checked" />
-                  <span className="checkmark"></span>
-                </label>
-                <p>Entering into Asia</p>
-                <br />
-                <label className="checkbox-container">
-                  <input type="checkbox" checked="checked" />
-                  <span className="checkmark"></span>
-                </label>
-                <p>Requested by parties we work with</p>
-                <br />
-                <label className="checkbox-container">
-                  <input type="checkbox" checked="checked" />
-                  <span className="checkmark"></span>
-                </label>
-                <p>Singapore is internationally recognized hub</p>
-                <br />
-                <label className="checkbox-container">
-                  <input type="checkbox" checked="checked" />
-                  <span className="checkmark"></span>
-                </label>
-                <p>Others please specify</p>
-                <br />
+                {sourceFund.map((eachFund, index) => {
+                  return (
+                    <>
+                      <label className="checkbox-container" key={index}>
+                        <input
+                          type="checkbox"
+                          checked={
+                            sourceFunds.includes(eachFund) ? "checked" : ""
+                          }
+                          onChange={() => onSelectSourceFund(eachFund)}
+                        />
+                        <span className="checkmark"></span>
+                      </label>
+                      <p>{eachFund}</p>
+                    </>
+                  );
+                })}
               </div>
             </div>
             <div className="col-md-12">
               <span className="float-right margin-bottom">
                 <Link to="/company-address">
-                  <button className="primary-button right">Save & Next</button>
+                  <button
+                    className="primary-button right"
+                    style={{
+                      opacity:
+                        proposedName.length &&
+                        firstChoice.length &&
+                        sourceFunds.length &&
+                        businessPoints.length
+                          ? ""
+                          : "0.4"
+                    }}
+                    disabled={
+                      !proposedName.length &&
+                      !firstChoice.length &&
+                      !sourceFunds.length &&
+                      !businessPoints.length
+                    }
+                  >
+                    Save & Next
+                  </button>
                 </Link>
               </span>
             </div>
