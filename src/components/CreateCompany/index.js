@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
 import { Link } from "react-router-dom";
 
-export default function CreateCompany() {
-  const [proposedName, setProposedName] = useState("");
-  const [firstChoice, setFirstChoice] = useState("");
-  const [businessDetail, setBusinessDetail] = useState("");
-  const [companyActivity, setCompanyActivity] = useState("");
+export default function CreateCompany(props) {
+  const [companyInformation, setCompanyInformation] = useState({
+    proposedName: "",
+    firstChoice: "",
+    businessDetail: "",
+    companyActivity: ""
+  });
 
   const businessInterestPoints = [
     "Expansion of existing business",
@@ -27,13 +29,17 @@ export default function CreateCompany() {
 
   const onChangeCompanyInformation = e => {
     const { name, value } = e.target;
-    console.log(name, value);
+    let temp = { ...companyInformation };
+    temp[name] = value;
+    setCompanyInformation(temp);
   };
   const onCheckProposedName = e => {
     alert("check click");
   };
   const onChangeCompanyActivity = e => {
-    console.log(e.target.value);
+    let temp = { ...companyInformation };
+    temp["companyActivity"] = e.target.value;
+    setCompanyInformation(temp);
   };
   const onChangeBusinessPoints = point => {
     let temp = [...businessPoints];
@@ -59,6 +65,15 @@ export default function CreateCompany() {
       temp = [...temp, point];
     }
     setSourceFunds(temp);
+  };
+  const onClickSave = e => {
+    e.preventDefault();
+    let tempObj = {
+      ...companyInformation,
+      businessPoints: businessPoints,
+      sourceFunds: sourceFunds
+    };
+    props.showNextComponent();
   };
 
   return (
@@ -109,14 +124,14 @@ export default function CreateCompany() {
                     className="line-textbox"
                     name="proposedName"
                     onChange={onChangeCompanyInformation}
-                    value={proposedName}
+                    value={companyInformation.proposedName}
                   />
                   <input
                     type="text"
                     className="dotted-textbox"
                     name="firstChoice"
                     onChange={onChangeCompanyInformation}
-                    value={firstChoice}
+                    value={companyInformation.firstChoice}
                   />
                   <button
                     className="primary-button"
@@ -146,7 +161,7 @@ export default function CreateCompany() {
                 rows="5"
                 name="businessDetail"
                 onChange={onChangeCompanyInformation}
-                value={businessDetail}
+                value={companyInformation.businessDetail}
               ></textarea>
               <p>Description must have atleast 100 or more characters</p>
             </div>
@@ -154,7 +169,7 @@ export default function CreateCompany() {
               <label>SSIC - Company Activity</label>
               <select
                 onChange={onChangeCompanyActivity}
-                value={companyActivity}
+                value={companyInformation.companyActivity}
               >
                 <option value="First">
                   [01111] Growing of leafy and fruit vegetables
@@ -221,28 +236,27 @@ export default function CreateCompany() {
             </div>
             <div className="col-md-12">
               <span className="float-right margin-bottom">
-                <Link to="/company-address">
-                  <button
-                    className="primary-button right"
-                    style={{
-                      opacity:
-                        proposedName.length &&
-                        firstChoice.length &&
-                        sourceFunds.length &&
-                        businessPoints.length
-                          ? ""
-                          : "0.4"
-                    }}
-                    disabled={
-                      !proposedName.length &&
-                      !firstChoice.length &&
-                      !sourceFunds.length &&
-                      !businessPoints.length
-                    }
-                  >
-                    Save & Next
-                  </button>
-                </Link>
+                <button
+                  className="primary-button right"
+                  // style={{
+                  //   opacity:
+                  //     companyInformation.proposedName.length &&
+                  //     companyInformation.firstChoice.length &&
+                  //     sourceFunds.length &&
+                  //     businessPoints.length
+                  //       ? ""
+                  //       : "0.4"
+                  // }}
+                  // disabled={
+                  //   !companyInformation.proposedName.length &&
+                  //   !companyInformation.firstChoice.length &&
+                  //   !sourceFunds.length &&
+                  //   !businessPoints.length
+                  // }
+                  onClick={onClickSave}
+                >
+                  Save & Next
+                </button>
               </span>
             </div>
             <div className="clo-md-12"></div>

@@ -24,16 +24,7 @@ const routing = (
       <Switch>
         <Route path="/" exact component={LoginContainer} />
         <Route path="/signup" component={SignUpContainer} />
-        <Route path="/accounting" component={Accounting} />
-        <Route path="/payment" component={Payment} />
-        <Route path="/company-address" component={CompanyAddress} />
-        <Route
-          path="/directors-shareholders"
-          component={DirectorsShareholders}
-        />
         <Route path="/home" component={HomeContainer} />
-        <Route path="/new-company" component={CreateCompanyContainer} />
-        <Route path="/existing-company" component={ExistCompany} />
       </Switch>
     </div>
   </Router>
@@ -44,3 +35,13 @@ ReactDOM.render(
 );
 
 serviceWorker.unregister();
+
+// <Route path="/accounting" component={Accounting} />
+//         <Route path="/payment" component={Payment} />
+//         <Route path="/company-address" component={CompanyAddress} />
+//         <Route
+//           path="/directors-shareholders"
+//           component={DirectorsShareholders}
+//         />
+// <Route path="/existing-company" component={ExistCompany} />
+// <Route path="/create-company" component={CreateCompanyContainer} />

@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import Directors from "./Directors";
 import Shareholders from "./Shareholders";
 
-export default function DirectorsShareholders() {
+export default function DirectorsShareholders(props) {
   const [activeCard, setActiveCard] = useState("");
   const currentActiveCard = card => {
     setActiveCard(card);
   };
-
+  const onClickSave = () => {
+    props.showNextComponent();
+  };
   return (
     <div>
       <div className="container new_workflow">
@@ -243,9 +245,9 @@ export default function DirectorsShareholders() {
 
             <div className="col-md-12">
               <span className="float-right">
-                <Link to="/accounting">
-                  <button className="primary-button right">Save & Next</button>
-                </Link>
+                <button className="primary-button right" onClick={onClickSave}>
+                  Save & Next
+                </button>
               </span>
             </div>
           </div>

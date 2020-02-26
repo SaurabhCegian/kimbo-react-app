@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import AccountingChild from "./AccountingChild";
 import WebsiteChild from "./WebsiteChild";
 
-export default function Accounting() {
+export default function Accounting(props) {
   const [activeCard, setActiveCard] = useState("");
   const setActiveCardFun = card => {
     setActiveCard(card);
+  };
+  const onClickSave = () => {
+    props.showNextComponent();
   };
   return (
     <div>
@@ -344,14 +347,12 @@ export default function Accounting() {
           <div className="col-md-12 on-boarding-button-center">
             <div className="on-boarding-button">
               <span className="float-right margin-bottom">
-                <Link to="/payment">
-                  <button className="primary-button">Save & Next</button>
-                </Link>
+                <button className="primary-button" onClick={onClickSave}>
+                  Save & Next
+                </button>
               </span>
               <span className="float-right margin-bottom margin-right">
-                <Link to="/directors-shareholders">
-                  <button className="primary-button">Back</button>
-                </Link>
+                <button className="primary-button">Back</button>
               </span>
             </div>
           </div>

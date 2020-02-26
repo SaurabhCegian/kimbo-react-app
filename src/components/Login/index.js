@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import logo from "../../assets/images/logo.png";
 import loginImg from "../../assets/images/login-indesign.png";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { config } from "../../Auth";
-import { FLASK_PORT } from "../../Auth/PortConstant";
+import { history } from "../../Auth/History";
 
 export default function Login() {
   const [loginCredential, setLoginCredential] = useState({
@@ -50,16 +48,17 @@ export default function Login() {
       loginCredential.email.length &&
       loginCredential.password.length
     ) {
-      console.log(loginCredential);
-      axios
-        .post(`${FLASK_PORT}login`, loginCredential, config)
-        .then(response => {
-          if (response.data.status === 200) {
-            console.log(response);
-          } else {
-            alert(response.data.message);
-          }
-        });
+      history.push("/home");
+      // console.log(loginCredential);
+      // axios
+      //   .post(`${FLASK_PORT}login`, loginCredential, config)
+      //   .then(response => {
+      //     if (response.data.status === 200) {
+      //       console.log(response);
+      //     } else {
+      //       alert(response.data.message);
+      //     }
+      //   });
     }
   };
   console.log(error, loginCredential);

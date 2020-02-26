@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import OwnAddress from "./OwnAddress";
 import ExistingAddress from "./ExistingAddress";
 
-export default function CompanyAddress() {
+export default function CompanyAddress(props) {
   const [activeCard, setActiveCard] = useState("");
   const onClickNewAddres = () => {
     setActiveCard("new-address");
   };
   const onClickExistingAddres = () => {
     setActiveCard("exist-address");
+  };
+  const onClickSave = () => {
+    props.showNextComponent();
   };
   return (
     <div className="container new_workflow">
@@ -307,9 +310,9 @@ export default function CompanyAddress() {
         {activeCard === "exist-address" && <ExistingAddress />}
         <div className="col-md-12">
           <span className="float-right margin-bottom">
-            <Link to="/directors-shareholders">
-              <button className="primary-button right">Save & Next</button>
-            </Link>
+            <button className="primary-button right" onClick={onClickSave}>
+              Save & Next
+            </button>
           </span>
         </div>
       </div>
